@@ -14,11 +14,9 @@
 ActiveRecord::Schema.define(version: 20130819175008) do
 
   create_table "events", force: true do |t|
-    t.string   "title"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "all_day"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "provider_id"
