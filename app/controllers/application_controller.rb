@@ -27,4 +27,12 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def check_user_login
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+    else
+      redirect_to login_path
+    end
+  end
+
 end

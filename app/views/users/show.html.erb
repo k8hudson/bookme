@@ -1,0 +1,7 @@
+<h1><%= @user.pname %></h1>
+<h3><%= @user.email %></h3>
+
+
+<% @user_events.each do |event| %>
+<div><%= link_to event.starts_at, event_path(event) %></div>
+<% end %>

@@ -1,22 +1,17 @@
-<h1>Create a Provider Account</h1>
+<h1>Create a User Account</h1>
 
 
-<%= form_for @provider do |f| %>
+<%= form_for @user do |f| %>
 <%= f.error_messages %>
 
 <div>
-<%= f.label :pname, "Name" %>
-<%= f.text_field :pname %>
+<%= f.label :username, "Name" %>
+<%= f.text_field :username %>
 </div>
 
 <div>
 <%= f.label :email %>
 <%= f.text_field :email %>
-</div>
-
-<div>
-<%= f.label :category%>
-<%= f.text_field :category%> <!--create into a drop down-->
 </div>
 
 <div>

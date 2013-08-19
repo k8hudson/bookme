@@ -2,7 +2,9 @@
 
 <%= link_to "Sign in with Facebook", "/auth/facebook" %>
 
-<%= form_for @provider, url: login_path do |f| %>
+
+<h2>User</h2>
+<%= form_for @login_form, url: login_path do |f| %>
 
 <div>
   Email: <%= f.text_field :email %>

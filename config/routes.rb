@@ -3,6 +3,8 @@ Bookme::Application.routes.draw do
 
   resources :providers
 
+  resources :users
+
   get "calendar/index"
 
 

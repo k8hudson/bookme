@@ -1,9 +1,10 @@
 <h1>Profile</h1>
+<h3>Providers</h3>
 
 <%= form_for @current_provider do |f| %>
 
 <div>Your Name: <%= f.text_field :pname %></div>
-<div>Category <%= f.label :category %></div>
+<div>E-mail: <%= f.text_field :email %></div>
 
 <%= f.submit "Save Settings" %>
 
