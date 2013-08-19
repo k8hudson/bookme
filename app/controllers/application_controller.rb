@@ -17,5 +17,14 @@ class ApplicationController < ActionController::Base
     ajax_request_types = ['text/javascript', 'application/json', 'text/xml']
     request.accepts.sort! { |x, y| ajax_request_types.include?(y.to_s) ? 1 : -1 } if request.xhr?
   end  
+
+
+  def check_provider_login
+    if session[:provider_id]
+      @current_provider = Provider.find(session[:provider_id])
+    else
+      redirect_to login_path
+    end
+  end
   
 end

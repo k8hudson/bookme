@@ -1,7 +1,15 @@
 Bookme::Application.routes.draw do
   resources :events
 
+  resources :providers
+
   get "calendar/index"
+
+
+
+  get '/login', to: 'login#new_session'
+  post '/login', to: 'login#create_session'
+  get 'logout', to: 'login#logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,33 @@
+<h1>Create a Provider Account</h1>
+
+
+<%= form_for @provider do |f| %>
+<%= f.error_messages %>
+
+<div>
+<%= f.label :pname, "Provider Name" %>
+<%= f.text_field :pname %>
+</div>
+
+<div>
+<%= f.label :email %>
+<%= f.text_field :email %>
+</div>
+
+<div>
+<%= f.label :category%>
+<%= f.text_field :category%> <!--create into a drop down-->
+</div>
+
+<div>
+<%= f.label :password %>
+<%= f.password_field :password %>
+</div>
+
+<div>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation %>
+</div>
+
+<%= f.submit %>
+<% end %>

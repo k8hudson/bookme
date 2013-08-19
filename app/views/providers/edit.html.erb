@@ -1,0 +1,10 @@
+<h1>Profile</h1>
+
+<%= form_for @current_provider do |f| %>
+
+<div>Your Name: <%= f.text_field :pname %></div>
+<div>Category <%= f.label :category %></div>
+
+<%= f.submit "Save Settings" %>
+
+<% end %>

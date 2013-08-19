@@ -1,0 +1,6 @@
+<h1><%= @provider.pname %></h1>
+
+
+<% @provider_events.each do |event| %>
+<div><%= link_to event.starts_at, event_path(event) %></div>
+<% end %>
