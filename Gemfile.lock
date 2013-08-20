@@ -50,6 +50,9 @@ GEM
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     fullcalendar-rails (1.6.1.0)
+    gon (4.1.1)
+      actionpack (>= 2.3.0)
+      json
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -145,6 +148,7 @@ DEPENDENCIES
   debugger
   dynamic_form
   fullcalendar-rails
+  gon
   jbuilder (~> 1.2)
   jquery-rails
   omniauth-facebook

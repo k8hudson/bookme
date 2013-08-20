@@ -22,8 +22,7 @@ class UsersController < ApplicationController
   end
   #
   def events
-    @events = Event.where(user_id: params[:id])
-
+    @events = @current_user.events
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @events }

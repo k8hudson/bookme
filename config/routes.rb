@@ -3,7 +3,7 @@ Bookme::Application.routes.draw do
 
   resources :providers
 
-  get '/users/:id/events', to: 'users#events' 
+  get '/users/events', to: 'users#events' 
   resources :users do
     # resources :events #, only: [:show]
   end

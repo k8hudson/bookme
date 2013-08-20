@@ -28,8 +28,9 @@ class ApplicationController < ActionController::Base
   end
   
   def check_user_login
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
+    if session[:user_id] 
+      @current_user ||= User.find(session[:user_id])
+      #gon.current_user_id = @current_user.id
     else
       redirect_to login_path
     end

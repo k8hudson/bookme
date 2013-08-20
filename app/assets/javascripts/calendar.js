@@ -44,7 +44,9 @@ $(document).ready(function() {
         // a future calendar might have many sources.        
         eventSources: [{
             //url: '/events',
-            url: '/users/1/events',
+            // url: '/users/1/events',
+            url: '/users/events',
+            //url: '/users/' + gon.current_user_id + '/events',
             color: 'yellow',
             textColor: 'black',
             allDay: false,
