@@ -3,6 +3,16 @@ class User < ActiveRecord::Base
 	has_many :events
 	has_many :providers, through: :events
 
+
+
+	validates :username, presence: true
+	validates :email, uniqueness: true, presence: true,
+                       format: {
+                         with: /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i,
+                         message: "must be formatted correctly."
+                       }
+
+
 	def self.from_omniauth(auth)
     	where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
 	      user.provider = auth.provider

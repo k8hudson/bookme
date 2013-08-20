@@ -2,6 +2,7 @@
 
 <h2>Provider</h2>
 <%= form_for @provider, url: bizlogin_path do |f| %>
+<%= f.error_messages %>
 
 <div>
   Email: <%= f.text_field :email %>

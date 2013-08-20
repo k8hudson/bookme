@@ -5,6 +5,7 @@
 
 <h2>User</h2>
 <%= form_for @user, url: login_path do |f| %>
+<%= f.error_messages %>
 
 <div>
   Email: <%= f.text_field :email %>
