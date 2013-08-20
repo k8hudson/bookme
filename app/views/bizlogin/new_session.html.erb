@@ -1,10 +1,7 @@
-<h1>Log in to BookMe</h1>
+<h1>Log in to BookMe for Business</h1>
 
-<%= link_to "Sign in with Facebook", "/auth/facebook" %>
-
-
-<h2>User</h2>
-<%= form_for @user, url: login_path do |f| %>
+<h2>Provider</h2>
+<%= form_for @provider, url: bizlogin_path do |f| %>
 
 <div>
   Email: <%= f.text_field :email %>

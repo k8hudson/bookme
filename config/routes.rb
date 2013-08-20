@@ -7,11 +7,17 @@ Bookme::Application.routes.draw do
 
   get "calendar/index"
 
-
-
   get '/login', to: 'login#new_session'
   post '/login', to: 'login#create_session'
   get 'logout', to: 'login#logout'
+
+  get '/bizlogin', to: 'bizlogin#new_session'
+  post '/bizlogin', to: 'bizlogin#create_session'
+  get 'bizlogout', to: 'bizlogin#logout'
+
+  get '/auth/:provider/callback', to: 'login#create_session'
+  get '/auth/failure', to: 'login#new_session'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
