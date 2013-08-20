@@ -1,23 +1,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html>
 <head>
+    <title>SamCRM</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- Glyphicons -->
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+  <!-- Logo -->
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+
   <title>Calendar</title>  
-  <%= stylesheet_link_tag "fullcalendar.css" %>
-  <%= stylesheet_link_tag "application.css" %>
-  <%= javascript_include_tag "jquery.js" %>
-  <%= javascript_include_tag "jquery.rest.js" %>
-  <%= javascript_include_tag "rails.js" %>
-  <%= javascript_include_tag "application.js" %>
-  
   <!-- these are needed for the calendar. -->
-  <%= javascript_include_tag "jquery-ui-1.8.11.custom.min.js" %>
   <%= javascript_include_tag "fullcalendar.js" %>
-  <%= javascript_include_tag "calendar.js" %>
+  <%= javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js" %>
   
   <%= csrf_meta_tag %>  
   
   <%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
   
 </head>
+<!-- header -->
+  <header id="header" class="navbar">
+    <ul class="nav navbar-nav navbar-avatar pull-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">            
+          <span class="hidden-xs-only">Andrea of The River</span>
+          <span class="thumb-small avatar inline"><%= image_tag 'avatar.jpg', class: "img-circle" %></span>
+          <b class="caret hidden-xs-only"></b>
+        </a>
+      </li>
+    </ul>
+    <a class="navbar-brand" href="#">SAM</a>
+  </header>
+  <!-- / header -->
+  <!-- nav -->
+  <nav id="nav" class="nav-primary hidden-xs nav-vertical">
+    <ul class="nav" data-spy="affix" data-offset-top="50">
+      <li class="active"><a href="calendar.html"><i class="glyphicon glyphicon-calendar icon-xlarge"></i> <span>Calendario</span></a></li>
+    </ul>
+  </nav>
+  <!-- / nav -->
 <body>
  <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>

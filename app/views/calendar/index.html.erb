@@ -1,4 +1,29 @@
-<%= link_to "new event", new_event_path %>
+<section id="content" class="content-sidebar bg-white">
+    <!-- .sidebar -->
+    <aside class="sidebar bg-lighter padder clearfix">
+      <h5>Arrastra tus Horarios Disponibles</h5>
+      <div class="line"></div>
+      <div id="myEvents" class="pillbox clearfix m-b no-border no-padder">
+        <ul>
+          <li class="label bg-inverse">Horario 1</li>
+          <li class="label bg-inverse">Nuevo horario</li>
+          <li class="label bg-inverse">Otro horario</li>
+          <input type="text" placeholder="Agrega otro horario">
+        </ul>
+      </div>
+      <div class="line"></div>
+      <div class="checkbox">
+        <label class="checkbox-custom"><input type='checkbox' id='drop-remove' />
+        <i class="glyphicon glyphicon-unchecked"></i> Quitar horario después de arrastrar</label>
+      </div>
+    </aside>
+    <!-- /.sidebar -->
+    <!-- .main -->
+    <section class="main">
+      <div class="calendar" id="fullcalendar">
 
-<div id='calendar'></div>
+      </div>
+    </section>
+    <!-- /.main -->
+  </section>
 
