@@ -8,8 +8,10 @@ class Event < ActiveRecord::Base
   def as_json(options = {})
     {
       :id => self.id,
-      :title => self.title,
-      :description => self.description || "",
+      :title => "test",
+      #:title => self.title,
+      #:description => self.description || "",
+      :description => "description",
       :start => starts_at.rfc822,
       :end => ends_at.rfc822,
       :allDay => self.all_day,

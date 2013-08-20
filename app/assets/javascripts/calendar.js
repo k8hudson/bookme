@@ -43,7 +43,8 @@ $(document).ready(function() {
         
         // a future calendar might have many sources.        
         eventSources: [{
-            url: '/events',
+            //url: '/events',
+            url: '/users/1/events',
             color: 'yellow',
             textColor: 'black',
             allDay: false,

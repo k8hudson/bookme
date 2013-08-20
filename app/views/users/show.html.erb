@@ -5,6 +5,9 @@
 <h3>No upcoming appointments.</h3>
 <% else %>
 <% @user.events.each do |event| %>
+<td><%= event.starts_at %></td>
+<td><%= event.ends_at %></td>
+
 <div><%= link_to event.starts_at, event_path(event) %></div>
 <% end %>
 <% end %>

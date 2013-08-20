@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.xml
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by(user_id: params[:user_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +41,8 @@ class EventsController < ApplicationController
       format.xml  { render :xml => @event }
     end
   end
+
+
 
   # GET /events/1/edit
   def edit

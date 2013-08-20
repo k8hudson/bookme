@@ -20,7 +20,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
   end
+  #
+  def events
+    @events = Event.where(user_id: params[:id])
 
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @events }
+      format.js { render :json => @events.to_json }
+    end
+  end
+  #
   def edit
   end
 
