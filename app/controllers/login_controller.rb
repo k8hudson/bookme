@@ -1,4 +1,5 @@
 class LoginController < ApplicationController
+
   def new_session
     @user = User.new
   end
@@ -26,4 +27,11 @@ class LoginController < ApplicationController
     reset_session
     redirect_to login_path
   end
+
+  # def signin_redirect
+  #   if !signed_in? 
+  #     redirect_to logout_path
+  #   end
+  # end
+
 end
