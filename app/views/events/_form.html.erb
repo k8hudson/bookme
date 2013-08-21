@@ -12,20 +12,16 @@
   <% end %>
 
   
-  <div class="field">
-    <%= f.label :starts_at %><br />
-    <%= f.datetime_select :starts_at %>
-  </div>
-  <div class="field">
-    <%= f.label :ends_at %><br />
-    <%= f.datetime_select :ends_at %>
-  </div>
-  <div class="field">
-    <%= f.label :all_day %><br />
-    <%= f.check_box :all_day %>
-  </div>
+  <fieldset class="form_group">
+    <p><label>Comienza el</label><br />
+    <%= f.datetime_select :starts_at %></p>
+    <p><label>Termina el</label><br />
+    <%= f.datetime_select :ends_at %></p>
+    <p><%= f.check_box :all_day %>
+    <label>Todo el día</label></p>
+  </fieldset>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear Evento', class: "btn btn-success" %>
   </div>
 <% end %>

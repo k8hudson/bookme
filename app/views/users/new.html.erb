@@ -1,67 +1,71 @@
-<!-- header -->
-  <header id="header" class="navbar navbar-fixed-top"  data-spy="affix" data-offset-top="1">
-    <div class="container">
-      <a class="navbar-brand" href="#">SAM</a>
-      <ul class="nav navbar-nav pull-right hidden-sm">
-        <li class="hide">
-          <a href="#header">Home</a>
-        </li>
-        <li>
-          <a href="#">Login</a>
-        </li>
-      </ul>
-    </div>
-  </header>
+<section id="content">
+    <div class="main padder">
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 m-t-large">
+          <section class="panel">
+            <header class="panel-heading text-center">
+              Regístrate
+            </header>
+            <!-- validations for creating a provider, errors called here-->
+                <% if @user.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user account from being saved:</h2>
 
-   <section id="content">
-    <div class="main-visual">
-      <div class="bg-inverse">
-        <div class="container">
-        	<div class="row text-center">
-        		<div class="col-md-8">
-		          <h1 class="animated fadeInUp">Administra las citas<br> con cada uno de tus clientes</h1>
-		          <p>
-		            <a href="#" target="_blank" class="btn btn-lg btn-danger animated fadeInLeft">Ingresa</a>
-		          </p>
-	          </div>
-	          <div class="col-md-4">
-        			<h2 class="font-thin">Crea una cuenta de usuario</h2>
-								<!-- validations for creating a provider, errors called here-->
-								<% if @user.errors.any? %>
-								    <div id="error_explanation">
-								      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user account from being saved:</h2>
-
-								     <ul>
-								      <% @user.errors.full_messages.each do |msg| %>
-								      <li><%= msg %></li>
-								      <% end %>
-								    </ul>
-								  </div>
-								<%end%>
+                     <ul>
+                      <% @user.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <%end%>
 
 
-								<%= form_for @user do |f| %>
-									<fieldset class="form-group">
-										<p><%= f.text_field :username, class: 'form-control input-lg', placeholder: 'Nombre' %></p>
-										<p><%= f.text_field :email, class: 'form-control input-lg', placeholder: 'Email' %></p>
-										<p><%= f.password_field :password, class: 'form-control input-lg', placeholder: 'Contraseña' %></p>
-										<p><%= f.password_field :password_confirmation, class: 'form-control input-lg', placeholder: 'Confirma tu contraseña' %></p>
-									</fieldset>
+                <div class="panel-body">
+                <%= form_for @user do |f| %>
+                    <div class="block">
+                    <label>Usuario</label>
+                    <%= f.text_field :username, class: 'form-control', placeholder: 'Nombre' %>
+                    </div>
+                    <div class="block">
+                    <label>Email</label>
+                    <%= f.text_field :email, class: 'form-control', placeholder: 'Email' %>
+                    </div>
+                    <div class="block">
+                    <label>Contreseña</label>
+                    <%= f.password_field :password, class: 'form-control', placeholder: 'Contraseña' %>
+                    </div>
+                    <div class="block">
+                    <label>Confirma tu contraseña</label>
+                    <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirma tu contraseña' %>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Acepto los <a href="#">términos y condiciones</a>
+                      </label>
+                    </div>
 
-									<%= f.submit 'Crear cuenta', class: "btn btn-lg btn-primary animated fadeInRight" %>
-								<% end %>
-          	</div>
-      		</div>
+                  <%= f.submit 'Crear cuenta', class: "btn btn-info" %>
+                <% end %>
+              <div class="line line-dashed"></div>
+              <div class="row">
+                <div class="col-sm-12 text-center">
+                   <a href="#" class="btn btn-facebook btn-circle btn-sm"><i class="glyphicon glyphicon-thumbs-up"></i>Conecta con Facebook</a>
+                </div>
+              </div>
+              <div class="line line-dashed"></div>
+              <p class="text-muted text-center"><small>¿Ya tienes una cuenta?</small></p>
+              <a href="signin.html" class="btn btn-white btn-block">Ingresa</a>
+            </div>
+          </section>
         </div>
       </div>
     </div>
-    <div id="about">
-      <div class="container">
-        <p>&nbsp;</p>
-        <div class="text-center m-large">
-          
-        </div>
-      </div>
-    </div>
-    
   </section>
+  <!-- footer -->
+  <footer id="footer">
+    <div class="text-center padder clearfix">
+      <p>
+        <small>&copy; SAM 2013. Todos los derechos reservados</small><br><br>
+      </p>
+    </div>
+  </footer>

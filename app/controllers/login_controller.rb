@@ -1,6 +1,7 @@
 class LoginController < ApplicationController
   def new_session
     @user = User.new
+    render layout: "users"
   end
 
   def create_session

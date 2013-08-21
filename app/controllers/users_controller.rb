@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    # render layout: "user.html.erb"
   end
 
   def create
