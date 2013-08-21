@@ -6,6 +6,7 @@
     <td><%= event.starts_at %></td>
     <td><%= event.ends_at %></td>
     <td><%= event.all_day %></td>
+    <td><%= Provider.find(event.provider_id).pname %></td>
    
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>

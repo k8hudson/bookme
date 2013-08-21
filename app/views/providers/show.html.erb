@@ -1,7 +1,10 @@
 <h1><%= @provider.pname %></h1>
 <h3><%= @provider.email %></h3>
 
-
+<% if @provider.events.count == 0 %>
+<h3>No upcoming appointments.</h3>
+<% else %>
 <% @provider_events.each do |event| %>
 <div><%= link_to event.starts_at, event_path(event) %></div>
+<% end %>
 <% end %>

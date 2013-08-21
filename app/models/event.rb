@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   def as_json(options = {})
     {
       :id => self.id,
-      :title => "test",
+      :title => Provider.find(self.provider_id).pname,
       #:title => self.title,
       #:description => self.description || "",
       :description => "description",

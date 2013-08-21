@@ -1,0 +1,25 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "SAM", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          
+        
+        <% if signed_in? %>
+            <li> <%= link_to "Sign out (users)", sign_out_path %>
+            </li>
+           
+            <li>
+                <%= link_to "Profile", '#' %>
+            </li>
+        <% else %>
+            <li>
+              <%= link_to "Sign in (users)", sign_in_path %>
+            </li>
+        <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

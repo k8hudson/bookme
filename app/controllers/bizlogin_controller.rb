@@ -4,9 +4,9 @@ class BizloginController < ApplicationController
   end
 
   def create_session
-    provider = Provider.find_by(email: params[:user][:email])
+    provider = Provider.find_by(email: params[:provider][:email])
 
-    if provider && provider.authenticate(params[:user][:password])
+    if provider && provider.authenticate(params[:provider][:password])
       session[:provider_id] = provider.id
       redirect_to provider_path(provider)
     else

@@ -11,9 +11,9 @@ Bookme::Application.routes.draw do
 
   get "calendar/index"
 
-  get '/login', to: 'login#new_session'
+  get '/login', to: 'login#new_session', as: 'sign_in' 
   post '/login', to: 'login#create_session'
-  get 'logout', to: 'login#logout'
+  get 'logout', to: 'login#logout', as: 'sign_out'
 
   get '/bizlogin', to: 'bizlogin#new_session'
   post '/bizlogin', to: 'bizlogin#create_session'
