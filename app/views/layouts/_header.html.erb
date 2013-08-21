@@ -7,15 +7,25 @@
           
         
         <% if signed_in? %>
-            <li> <%= link_to "Sign out (users)", sign_out_path %>
+            
+            <li> <%= link_to "Sign out", sign_out_path %>
             </li>
-           
+           <% if @current_user == nil %>
             <li>
-                <%= link_to "Profile", '#' %>
+                <%= @current_provider.pname %>
+                
+                <%= link_to "My appointments", providers_events_path %>
             </li>
+            <% else %>
+            <li>
+                <%= @current_user.username %>
+                <%= link_to "My appointments", users_events_path %>
+            </li>
+            <% end %>
         <% else %>
             <li>
               <%= link_to "Sign in (users)", sign_in_path %>
+              <%= link_to "Sign in (providers)", psign_in_path %>
             </li>
         <% end %>
         </ul>

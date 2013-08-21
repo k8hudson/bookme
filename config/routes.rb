@@ -1,12 +1,13 @@
 Bookme::Application.routes.draw do
   resources :events
 
-  resources :providers
+ 
 
-  get '/users/events', to: 'users#events' 
-  resources :users do
-    # resources :events #, only: [:show]
-  end
+  get '/users/events', to: 'users#events', as: 'users_events' 
+  get '/providers/events', to: 'providers#events', as: 'providers_events' 
+  resources :users 
+  resources :providers
+ 
 
 
   get "calendar/index"
@@ -15,9 +16,9 @@ Bookme::Application.routes.draw do
   post '/login', to: 'login#create_session'
   get 'logout', to: 'login#logout', as: 'sign_out'
 
-  get '/bizlogin', to: 'bizlogin#new_session'
-  post '/bizlogin', to: 'bizlogin#create_session'
-  get 'bizlogout', to: 'bizlogin#logout'
+  get '/plogin', to: 'plogin#new_session', as: 'psign_in'
+  post '/plogin', to: 'plogin#create_session'
+  get 'plogout', to: 'plogin#logout'
 
   get '/auth/:provider/callback', to: 'login#create_session'
   get '/auth/failure', to: 'login#new_session'

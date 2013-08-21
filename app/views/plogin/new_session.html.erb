@@ -1,0 +1,17 @@
+<h1>Log in to BookMe for Business</h1>
+
+<h2>Provider</h2>
+<%= form_for @provider, url: plogin_path do |f| %>
+<%= f.error_messages %>
+
+<div>
+  Email: <%= f.text_field :email %>
+</div>
+
+<div>
+  Password: <%= f.password_field :password %>
+</div>
+
+<%= f.submit "Log in" %>
+
+<% end %>

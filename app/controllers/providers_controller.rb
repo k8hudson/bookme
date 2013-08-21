@@ -20,7 +20,18 @@ class ProvidersController < ApplicationController
 		@provider = Provider.find(params[:id])
 		@provider_events = @provider.events
 	end
-
+	
+	#
+	def events
+	    @events = @current_provider.events
+	    respond_to do |format|
+	      format.html # show.html.erb
+	      format.xml  { render :xml => @events }
+	      format.js { render :json => @events.to_json }
+	    end
+	end
+	#
+	
 	def edit
 		
 	end
