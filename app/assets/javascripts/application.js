@@ -2,3 +2,4 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 //= require fullcalendar
+//= require jquery-ui

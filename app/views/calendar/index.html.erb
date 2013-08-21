@@ -1,4 +1,37 @@
-<%= link_to "new event", new_event_path %>
+<!-- header -->
+  <header id="header" class="navbar">
+    <ul class="nav navbar-nav navbar-avatar pull-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">            
+          <span class="hidden-xs-only">Andrea of The River</span>
+          <span class="thumb-small avatar inline"><%= image_tag 'avatar.jpg', class: "img-circle" %></span>
+          <b class="caret hidden-xs-only"></b>
+        </a>
+      </li>
+    </ul>
+    <a class="navbar-brand" href="#">SAM</a>
+  </header>
+  <!-- / header -->
+  <!-- nav -->
+  <nav id="nav" class="nav-primary hidden-xs nav-vertical">
+    <ul class="nav" data-spy="affix" data-offset-top="50">
+      <li class="active"><a href="calendar.html"><i class="glyphicon glyphicon-calendar icon-xlarge"></i> <span>Calendario</span></a></li>
+    </ul>
+  </nav>
+  <!-- / nav -->
 
-<div id='calendar'></div>
+<section id="content" class="content-sidebar bg-white">
+    <!-- .sidebar -->
+    <aside class="sidebar bg-lighter padder clearfix">
+      <h5>Arrastra tus Horarios Disponibles</h5>
+      <div class="line"></div>
+    </aside>
+    <!-- /.sidebar -->
+    <!-- .main -->
+    <section class="main">
+      <div class="calendar" id="calendar">
 
+      </div>
+    </section>
+    <!-- /.main -->
+  </section>
